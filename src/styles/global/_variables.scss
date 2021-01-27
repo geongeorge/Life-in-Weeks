@@ -1,0 +1,60 @@
+/** @format */
+
+$dark: #1e2022;
+$medium-dark: #52616b;
+$medium: #c9d6df;
+$light: #f0f5f9;
+$white: #fff;
+$tint: #d52941;
+$yellow: #ecd444;
+
+:root {
+  --primary: #{$tint};
+  --secondary: #{$medium-dark};
+  --font: #{$dark};
+  --bg: #{$light};
+  --heading: #{$dark};
+}
+
+[data-theme="dark"] {
+  --primary: #{$tint};
+  --secondary: #{$medium};
+  --font: #{$light};
+  --bg: #{$dark};
+  --heading: #{$white};
+}
+
+$font-serif: "Playfair Display", serif;
+$font-sans: "Roboto", sans-serif, -apple-system, BlinkMacSystemFont;
+
+$xs: 414px;
+$s: 768px;
+$m: 1023px;
+$l: 1440px;
+
+@mixin xs {
+  @media (min-width: #{$xs}) {
+    @content;
+  }
+}
+@mixin s {
+  @media (min-width: #{$s}) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: #{$m}) {
+    @content;
+  }
+}
+@mixin l {
+  @media (min-width: #{$l}) {
+    @content;
+  }
+}
+// Custom devices
+@mixin rwd($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}

@@ -1,0 +1,55 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap");
+
+body {
+  margin: 0;
+  font-family: $font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg);
+  color: var(--font);
+
+  transition: background-color 0.5s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  max-width: $l;
+  width: calc(100% - 40px);
+
+  @include s {
+    width: calc(100% - 80px);
+  }
+}
+
+input,
+button,
+textarea,
+link,
+select {
+  &:focus {
+    outline: 1px dotted var(--secondary);
+    outline-offset: 2px;
+  }
+}
+
+h1 {
+  color: var(--font);
+  font-size: 2.8rem;
+  font-family: $font-serif;
+}
+
+a {
+  color: var(--primary);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
