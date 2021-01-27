@@ -25,6 +25,17 @@
 
   &__el--active {
     background: var(--font);
+    border-color: var(--font);
+  }
+
+  &__label {
+    border: none;
+    font-size: 0.9em;
+    opacity: 0;
+
+    &--show {
+      opacity: 1;
+    }
   }
 }
 
@@ -33,8 +44,8 @@
   margin-left: -20px;
   margin-right: -20px;
   display: grid;
-  grid-template-columns: 25px auto;
-  grid-template-rows: 30px auto;
+  grid-template-columns: 25px 25px auto;
+  grid-template-rows: 30px 25px auto;
   font-size: 0.5em;
   gap: 0px 0px;
 
@@ -44,15 +55,18 @@
 
   @include s {
     font-size: 1em;
-    grid-template-columns: 35px auto;
-    grid-template-rows: 40px auto;
+    grid-template-columns: 35px 25px auto;
+    grid-template-rows: 40px 25px auto;
 
     svg {
+      color: --var(--secondary);
       width: 50px;
     }
   }
 
   &__weeks {
+    font-family: $font-serif;
+
     > div {
       display: flex;
       gap: 10px;
@@ -60,6 +74,8 @@
   }
 
   &__years {
+    font-family: $font-serif;
+
     > div {
       display: flex;
       gap: 10px;
