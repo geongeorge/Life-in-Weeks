@@ -1,0 +1,23 @@
+/** @format */
+
+.datepicker {
+  width: 100%;
+
+  input {
+    background: transparent;
+  }
+
+  .react-date-picker__wrapper {
+    width: 100%;
+    border: none;
+  }
+}
+
+.datepicker__wrapper {
+  border: 1px solid;
+  border-color: var(--primary);
+  font-size: 1.2em;
+  padding: 4px;
+
+  max-width: 300px;
+}

@@ -7,7 +7,7 @@ const WEEKS_IN_YEAR = 52;
 const TOTAL_YEARS = 90;
 
 function GridArea() {
-  const age = 23;
+  const age = 46;
   const ageWeeks = age * WEEKS_IN_YEAR;
 
   function getCurrentWeek(week, year) {
@@ -98,7 +98,7 @@ function GridArea() {
                 <div
                   className={getWeekClass(week, year)}
                   key={week}
-                  data-tip={`Year ${year + 1} Week ${week}`}
+                  data-tip={`Year ${year + 1} Week ${week + 1}`}
                 ></div>
               ))}
             </div>
