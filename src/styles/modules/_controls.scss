@@ -5,6 +5,15 @@
 
   input {
     background: transparent;
+    color: var(--font);
+  }
+
+  svg {
+    stroke: var(--font);
+  }
+
+  .react-calendar__month-view__weekdays {
+    color: $dark;
   }
 
   .react-date-picker__wrapper {
@@ -15,7 +24,7 @@
 
 .datepicker__wrapper {
   border: 1px solid;
-  border-color: var(--primary);
+  border-color: var(--font);
   font-size: 1.2em;
   padding: 4px;
 

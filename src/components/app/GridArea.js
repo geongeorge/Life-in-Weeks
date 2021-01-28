@@ -1,4 +1,5 @@
 /** @format */
+import { useEffect, useState } from "react";
 import SVG from "react-inlinesvg";
 import ReactTooltip from "react-tooltip";
 import Arrow from "../../assets/arrow-right.svg";
@@ -6,9 +7,16 @@ import Arrow from "../../assets/arrow-right.svg";
 const WEEKS_IN_YEAR = 52;
 const TOTAL_YEARS = 90;
 
-function GridArea() {
-  const age = 46;
-  const ageWeeks = age * WEEKS_IN_YEAR;
+function GridArea({ age = 0, weeks = 0 }) {
+  function getAgeInWeeks() {
+    return age * WEEKS_IN_YEAR + weeks;
+  }
+
+  const [ageInWeeks, setAgeInWeeks] = useState(getAgeInWeeks());
+
+  useEffect(() => {
+    setAgeInWeeks(getAgeInWeeks);
+  });
 
   function getCurrentWeek(week, year) {
     return year * WEEKS_IN_YEAR + (week + 1);
@@ -17,7 +25,7 @@ function GridArea() {
   function getWeekClass(week, year) {
     let className = "life-grid__el";
 
-    const isActive = getCurrentWeek(week, year) <= ageWeeks;
+    const isActive = getCurrentWeek(week, year) <= ageInWeeks;
     if (isActive) {
       className += " life-grid__el--active";
     }
@@ -98,7 +106,7 @@ function GridArea() {
                 <div
                   className={getWeekClass(week, year)}
                   key={week}
-                  data-tip={`Year ${year + 1} Week ${week + 1}`}
+                  data-tip={`Age: ${year} years and ${week + 1} weeks`}
                 ></div>
               ))}
             </div>
