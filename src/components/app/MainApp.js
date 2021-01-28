@@ -12,7 +12,7 @@ import Info from "./Info";
 const WEEKS_IN_YEAR = 52;
 
 const TOTAL_YEARS = 90;
-const DEFAULT_DATE = new Date("1/1/2000");
+const DEFAULT_DATE = new Date();
 
 function calculateAge(birthday) {
   const dob = dayjs(birthday);
