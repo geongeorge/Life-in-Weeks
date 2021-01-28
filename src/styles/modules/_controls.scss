@@ -1,5 +1,14 @@
 /** @format */
 
+.controls {
+  label {
+    display: block;
+    margin-top: 1.6em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+}
+
 .datepicker {
   width: 100%;
 
@@ -10,6 +19,12 @@
 
   svg {
     stroke: var(--font);
+  }
+
+  .react-calendar {
+    background: $light;
+    border: 1px solid;
+    border-color: var(--font);
   }
 
   .react-calendar__month-view__weekdays {

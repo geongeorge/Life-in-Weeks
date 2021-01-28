@@ -1,6 +1,7 @@
 /** @format */
 
 import { useEffect, useState } from "react";
+import { useStickyState, useStickyDate } from "../../helpers/stickyState";
 import HeaderBlock from "../HeaderBlock";
 import Controls from "./Controls";
 import GridArea from "./GridArea";
@@ -9,7 +10,9 @@ import dayjs from "dayjs";
 import Info from "./Info";
 
 const WEEKS_IN_YEAR = 52;
+
 const TOTAL_YEARS = 90;
+const DEFAULT_DATE = new Date("1/1/2000");
 
 function calculateAge(birthday) {
   const dob = dayjs(birthday);
@@ -27,10 +30,13 @@ function calculateWeeks(birthday) {
 }
 
 function MainApp() {
-  const [date, setDate] = useState(new Date("1/1/2000"));
+  const [date, setDate] = useStickyDate(DEFAULT_DATE, "life_date");
   const [age, setAge] = useState(calculateAge(date));
   const [weeks, setWeeks] = useState(calculateWeeks(date));
-  const [totalYears, setTotalYears] = useState(TOTAL_YEARS);
+  const [totalYears, setTotalYears] = useStickyState(
+    TOTAL_YEARS,
+    "life_total_years"
+  );
 
   useEffect(() => {
     setAge(calculateAge(date));

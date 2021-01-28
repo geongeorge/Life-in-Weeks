@@ -5,10 +5,14 @@ function HeaderBlock() {
     <header className="App-header">
       <h1>Life in weeks</h1>
       <p>
-        During celebratory battle parades in ancient Rome, the honored generals
-        were often accompanied by a slave whose sole role was to whisper, “Look
-        behind. Remember thou art mortal. Remember you must die!”
+        We've all heard life is short. But do we have any idea really how short
+        is it?
       </p>
+      <p>
+        Each square represents a week in your life, A row of 52 weeks is an year
+        in your life.
+      </p>
+      <p>Enter in the data below and see your life calendar.</p>
     </header>
   );
 }

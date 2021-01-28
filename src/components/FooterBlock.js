@@ -2,9 +2,14 @@
 
 function FooterBlock() {
   return (
-    <div>
-      <p>geon</p>
-    </div>
+    <footer class="footer">
+      <p>
+        by{" "}
+        <a href="https://geongeorge.com/" target="_blank">
+          geon
+        </a>
+      </p>
+    </footer>
   );
 }
 

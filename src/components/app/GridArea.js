@@ -90,8 +90,8 @@ function GridArea({ age = 0, weeks = 0, totalYears }) {
                 ? " life-grid__label--show"
                 : "";
             return (
-              <div className="life-grid__row">
-                <span className={classes} key={year} data-tip="hello world">
+              <div className="life-grid__row" key={year}>
+                <span className={classes} data-tip="hello world">
                   {current}
                 </span>
               </div>

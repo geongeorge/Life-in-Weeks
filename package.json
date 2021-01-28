@@ -13,7 +13,6 @@
     "react-dom": "^17.0.1",
     "react-inlinesvg": "^2.2.2",
     "react-scripts": "4.0.1",
-    "react-toast-notifications": "^2.4.0",
     "react-tooltip": "^4.2.13",
     "web-vitals": "^0.2.4"
   },
