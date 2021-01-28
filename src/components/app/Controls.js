@@ -5,7 +5,7 @@ import { useState } from "react";
 import DatePicker from "react-date-picker";
 import { useToasts } from "react-toast-notifications";
 
-function Controls({ date = new Date(), setDate, age, weeks }) {
+function Controls({ date, setDate, age, weeks, totalYears, setTotalYears }) {
   const { addToast } = useToasts();
 
   function handleDateChange(value) {
@@ -19,7 +19,7 @@ function Controls({ date = new Date(), setDate, age, weeks }) {
     setDate(value);
   }
   return (
-    <div>
+    <div className="controls">
       <p>Enter Your Birthday</p>
       <div className="datepicker__wrapper">
         <DatePicker
@@ -28,8 +28,26 @@ function Controls({ date = new Date(), setDate, age, weeks }) {
           value={date}
         />
       </div>
-      <div>
-        {age}, {weeks}
+      <div className="yearpicker">
+        <p>How many years do you estimate to live?</p>
+        <div className="yearpicker__wrapper">
+          <select
+            value={totalYears}
+            onChange={({ target }) => {
+              setTotalYears(target.value);
+            }}
+          >
+            {Array.from({ length: 121 }).map((_, index) => {
+              if (index < 1) return;
+
+              return (
+                <option key={index} value={index}>
+                  {index}
+                </option>
+              );
+            })}
+          </select>
+        </div>
       </div>
     </div>
   );

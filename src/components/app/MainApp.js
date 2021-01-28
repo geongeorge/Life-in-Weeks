@@ -5,10 +5,11 @@ import HeaderBlock from "../HeaderBlock";
 import Controls from "./Controls";
 import GridArea from "./GridArea";
 import dayjs from "dayjs";
-import dayOfYear from "dayjs/plugin/dayOfYear";
-dayjs.extend(dayOfYear);
+
+import Info from "./Info";
 
 const WEEKS_IN_YEAR = 52;
+const TOTAL_YEARS = 90;
 
 function calculateAge(birthday) {
   const dob = dayjs(birthday);
@@ -19,15 +20,17 @@ function calculateAge(birthday) {
 
 function calculateWeeks(birthday) {
   const now = dayjs();
-  const dob = dayjs(birthday).year(now.year());
+  const dob = dayjs(birthday).year(now.year() - 1);
+  const diff = now.diff(dob, "week");
 
-  return Math.abs(now.diff(dob, "week")); // +1 to adjust for zero
+  return Math.abs(diff) % WEEKS_IN_YEAR; // +1 to adjust for zero
 }
 
 function MainApp() {
   const [date, setDate] = useState(new Date("1/1/2000"));
   const [age, setAge] = useState(calculateAge(date));
   const [weeks, setWeeks] = useState(calculateWeeks(date));
+  const [totalYears, setTotalYears] = useState(TOTAL_YEARS);
 
   useEffect(() => {
     setAge(calculateAge(date));
@@ -41,6 +44,9 @@ function MainApp() {
     setAge,
     weeks,
     setWeeks,
+    totalYears,
+    setTotalYears,
+    WEEKS_IN_YEAR,
   };
 
   return (
@@ -48,6 +54,7 @@ function MainApp() {
       <div className="main-app__left">
         <HeaderBlock></HeaderBlock>
         <Controls {...controlProps}></Controls>
+        <Info {...controlProps}></Info>
       </div>
       <div className="main-app__right">
         <GridArea {...controlProps}></GridArea>

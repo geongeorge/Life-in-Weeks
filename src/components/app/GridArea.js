@@ -5,9 +5,9 @@ import ReactTooltip from "react-tooltip";
 import Arrow from "../../assets/arrow-right.svg";
 
 const WEEKS_IN_YEAR = 52;
-const TOTAL_YEARS = 90;
+// const TOTAL_YEARS = 90;
 
-function GridArea({ age = 0, weeks = 0 }) {
+function GridArea({ age = 0, weeks = 0, totalYears }) {
   function getAgeInWeeks() {
     return age * WEEKS_IN_YEAR + weeks;
   }
@@ -82,7 +82,7 @@ function GridArea({ age = 0, weeks = 0 }) {
         </div>
 
         <div className="life-grid">
-          {Array.from({ length: TOTAL_YEARS }, (_, year) => {
+          {Array.from({ length: totalYears }, (_, year) => {
             const current = year + 1;
             let classes = "life-grid__el life-grid__label";
             classes +=
@@ -100,7 +100,7 @@ function GridArea({ age = 0, weeks = 0 }) {
         </div>
 
         <section className="life-grid">
-          {Array.from({ length: TOTAL_YEARS }, (_, year) => (
+          {Array.from({ length: totalYears }, (_, year) => (
             <div className="life-grid__row" key={year}>
               {Array.from({ length: WEEKS_IN_YEAR }, (_, week) => (
                 <div

@@ -30,3 +30,22 @@
 
   max-width: 300px;
 }
+
+.yearpicker {
+  select {
+    background: transparent;
+    color: var(--font);
+    border: none;
+    width: 100%;
+    font-size: 1.2em;
+  }
+
+  .yearpicker__wrapper {
+    border: 1px solid;
+    border-color: var(--font);
+    font-size: 1.2em;
+    padding: 4px;
+
+    max-width: 300px;
+  }
+}
