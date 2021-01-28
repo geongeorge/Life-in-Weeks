@@ -2,7 +2,7 @@
 
 function FooterBlock() {
   return (
-    <footer class="footer">
+    <footer className="footer">
       <p>
         by{" "}
         <a href="https://geongeorge.com/" target="_blank" rel="noreferrer">

@@ -6,6 +6,7 @@
   &__row {
     display: flex;
     justify-content: center;
+    margin-top: 2px;
   }
 
   &__el {
@@ -14,7 +15,7 @@
     width: 1.3vw;
     border: 1px solid var(--secondary);
     transition: background-color 0.5s ease;
-    margin: 1px;
+    margin-right: 2px;
     font-size: 0.6em;
     // border-radius: 50%;
 
@@ -45,8 +46,8 @@
   margin-left: -20px;
   margin-right: -20px;
   display: grid;
-  grid-template-columns: 25px 25px auto;
-  grid-template-rows: 30px 25px auto;
+  grid-template-columns: 12px 12px auto;
+  grid-template-rows: 12px 12px auto;
   font-size: 0.5em;
   gap: 0px 0px;
 
