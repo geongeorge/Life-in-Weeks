@@ -1,5 +1,5 @@
 /** @format */
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import SVG from "react-inlinesvg";
 import ReactTooltip from "react-tooltip";
 import Arrow from "../../assets/arrow-right.svg";
@@ -8,15 +8,15 @@ const WEEKS_IN_YEAR = 52;
 // const TOTAL_YEARS = 90;
 
 function GridArea({ age = 0, weeks = 0, totalYears }) {
-  function getAgeInWeeks() {
+  const getAgeInWeeks = useCallback(() => {
     return age * WEEKS_IN_YEAR + weeks;
-  }
+  }, [age, weeks]);
 
   const [ageInWeeks, setAgeInWeeks] = useState(getAgeInWeeks());
 
   useEffect(() => {
     setAgeInWeeks(getAgeInWeeks);
-  });
+  }, [setAgeInWeeks, getAgeInWeeks]);
 
   function getCurrentWeek(week, year) {
     return year * WEEKS_IN_YEAR + (week + 1);

@@ -13,7 +13,7 @@ function Info({ age, weeks, totalYears, WEEKS_IN_YEAR }) {
     setLivedWeeks(lived);
     setTotalWeeks(total);
     setRemainingWeeks(total - lived);
-  }, [weeks, age, totalYears]);
+  }, [weeks, age, totalYears, WEEKS_IN_YEAR]);
 
   return (
     <div className="extra__info">
@@ -35,6 +35,7 @@ function Info({ age, weeks, totalYears, WEEKS_IN_YEAR }) {
         <a
           href="https://waitbutwhy.com/2014/05/life-weeks.html"
           target="_blank"
+          rel="noreferrer"
         >
           Wait but why
         </a>
