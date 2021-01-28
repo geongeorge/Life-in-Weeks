@@ -12,7 +12,7 @@ function HeaderBlock() {
         Each square represents a week in your life, A row of 52 weeks is an year
         in your life.
       </p>
-      <p>Enter in the data below and see your life calendar.</p>
+      <p>Fill in the data below and see your life calendar.</p>
     </header>
   );
 }

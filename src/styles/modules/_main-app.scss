@@ -7,6 +7,17 @@
 
   &__left {
     width: 100%;
+    margin-top: 30px;
+    margin-right: 30px;
+
+    @include s {
+      width: 30%;
+    }
+
+    @include m {
+      width: 40%;
+      min-width: 300px;
+    }
   }
 
   &__right {
@@ -14,10 +25,7 @@
   }
 
   @include m {
-    &__left {
-      width: 30%;
-    }
-
     flex-direction: row;
+    gap: 45px;
   }
 }
