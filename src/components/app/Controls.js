@@ -4,6 +4,9 @@ import DatePicker from "react-date-picker";
 
 function Controls({ date, setDate, age, weeks, totalYears, setTotalYears }) {
   function handleDateChange(value) {
+    if (value === null) {
+      value = new Date();
+    }
     setDate(value);
   }
   return (
